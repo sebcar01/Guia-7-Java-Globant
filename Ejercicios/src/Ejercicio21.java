@@ -13,9 +13,9 @@ public class Ejercicio21 {
 
     public static void rellenarMatrizM(int[][] matriz) {
 
-        matriz[0][0] = 36;
-        matriz[0][1] = 5;
-        matriz[0][2] = 67;
+        matriz[0][0] = 423;
+        matriz[0][1] = 53;
+        matriz[0][2] = 357;
         matriz[0][3] = 823542;
         matriz[0][4] = 905;
         matriz[0][5] = 5435;
@@ -23,9 +23,9 @@ public class Ejercicio21 {
         matriz[0][7] = 81;
         matriz[0][8] = 95;
         matriz[0][9] = 10;
-        matriz[1][0] = 89;
-        matriz[1][1] = 90;
-        matriz[1][2] = 75;
+        matriz[1][0] = 859;
+        matriz[1][1] = 901;
+        matriz[1][2] = 753;
         matriz[1][3] = 21;
         matriz[1][4] = 41;
         matriz[1][5] = 22;
@@ -33,9 +33,9 @@ public class Ejercicio21 {
         matriz[1][7] = 20;
         matriz[1][8] = 10;
         matriz[1][9] = 61;
-        matriz[2][0] = 14;
-        matriz[2][1] = 22;
-        matriz[2][2] = 26;
+        matriz[2][0] = 143;
+        matriz[2][1] = 223;
+        matriz[2][2] = 263;
         matriz[2][3] = 90;
         matriz[2][4] = 9;
         matriz[2][5] = 90;
@@ -57,19 +57,19 @@ public class Ejercicio21 {
         matriz[4][1] = 76;
         matriz[4][2] = 79;
         matriz[4][3] = 1;
-        matriz[4][4] = 54;
-        matriz[4][5] = 66;
-        matriz[4][6] = 68;
-        matriz[4][7] = 96;
-        matriz[4][8] = 12;
+        matriz[4][4] = 36;
+        matriz[4][5] = 5;
+        matriz[4][6] = 67;
+        matriz[4][7] = 4535;
+        matriz[4][8] = 5435;
         matriz[4][9] = 11;
         matriz[5][0] = 99;
         matriz[5][1] = 13;
         matriz[5][2] = 54;
         matriz[5][3] = 88;
-        matriz[5][4] = 897;
-        matriz[5][5] = 92;
-        matriz[5][6] = 73;
+        matriz[5][4] = 89;
+        matriz[5][5] = 90;
+        matriz[5][6] = 75;
         matriz[5][7] = 16;
         matriz[5][8] = 41;
         matriz[5][9] = 76;
@@ -77,9 +77,9 @@ public class Ejercicio21 {
         matriz[6][1] = 78;
         matriz[6][2] = 87;
         matriz[6][3] = 45;
-        matriz[6][4] = 15;
-        matriz[6][5] = 24;
-        matriz[6][6] = 27;
+        matriz[6][4] = 14;
+        matriz[6][5] = 22;
+        matriz[6][6] = 26;
         matriz[6][7] = 42;
         matriz[6][8] = 56;
         matriz[6][9] = 78;
@@ -135,6 +135,8 @@ public class Ejercicio21 {
         int fila = 0;
         int columna = 0;
 
+        loopprincipal:
+
         for (int i = 0; i <= 9; i++) {
 
             for (int j = 0; j <= 9; j++) {
@@ -144,7 +146,6 @@ public class Ejercicio21 {
                     conteo += 1;
                     fila = i;
                     columna = j;
-                    break;
 
                 }
 
@@ -157,6 +158,7 @@ public class Ejercicio21 {
                 if (conteo < 3 && matrizM[fila + 2][columna] == matrizP[2][0] && matrizM[fila + 2][columna + 1] == matrizP[2][1] && matrizM[fila + 2][columna + 2] == matrizP[2][2]) {
 
                     conteo += 1;
+                    break loopprincipal;
 
                 }
 
