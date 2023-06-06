@@ -22,7 +22,7 @@ public class Ejercicio13 {
 
             }
 
-            System.out.println("");
+            System.out.println();
 
         }
 
