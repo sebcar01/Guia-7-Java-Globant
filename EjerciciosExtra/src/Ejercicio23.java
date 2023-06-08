@@ -15,33 +15,76 @@ public class Ejercicio23 {
     public static void llenarSopaDeLetras(String[][] matriz, Scanner sc){
         int min = 0;
         int max = 19;
-        int[] vector = new int[5];
-        String num = "";
+        int[] vectorFila = new int[5];
+        int[] vectorColumna = new int[5];
         int j;
+        int k;
+        int conteo = 0;
         String palabra = "";
 
-        for (int i = 1; i <= 5; i++) {
+        numeroAleatorio(vectorFila, min, max); // Se generan 5 numeros aleatorios para las filas, se verifica que no se repitan
+        max = 15;
+        numeroAleatorio(vectorColumna, min, max); // Se generan 5 numeros aleatorios para las filas, se verifica que no se repitan
+
+        for (int i = 0; i <= 4; i++) { // 1
+
+            // Se ingresa la palabra y se verifica que sea mayor a 3 y menor a 5
 
             do {
 
-                System.out.println("Ingresa la palabra " + i + ". La longitud tiene que ser mayor o igual a 3 y menor o igual a 5");
+                System.out.println("Ingresa la palabra " + (i + 1) + ". La longitud tiene que ser mayor o igual a 3 y menor o igual a 5");
                 palabra = sc.nextLine();
 
             } while (palabra.length() < 3 || palabra.length() > 5);
 
-            for (int l = 0; l <= 4; l++) {
+            // Se ingresa la palabra en la fila y columnas aleatorias que se generaron anteriormente
 
-                vector[l] = (int) (Math.random() * (max - min + 1) + min);
+            j = vectorFila[i];
+            k = vectorColumna[i];
+
+            while (conteo <= palabra.length() - 1) {
+
+                matriz[j][k] = palabra.substring(conteo,conteo + 1);
+                conteo += 1;
+                k += 1;
 
             }
 
-            for (int l = 0; l <= 4; l++) {
+            conteo = 0;
 
-                if (l <= 3) {
+        }
 
-                    if (vector[l] == vector[l + 1]) {
+        // Se rellenan los espacios vacios con numeros aleatorios, maximo el numero 9
 
-                        vector[l + 1] = (int) (Math.random() * (max - min + 1) + min);
+        max = 9;
+
+        numeroAleatorio(matriz, min, max);
+
+    }
+
+    public static void numeroAleatorio(int[] vector, int min, int max) {
+
+        for (int i = 0; i <= 4; i++) {
+
+            vector[i] = (int) (Math.random() * (max - min + 1) + min);
+
+        }
+
+        verificarRepetidos(vector, min, max);
+
+    }
+
+    public static void verificarRepetidos(int[] vector, int min, int max) {
+
+        for (int i = 0; i <= 4; i++) {
+
+            for (int j = 1; j <= 4; j++) {
+
+                if (i != j) {
+
+                    if (vector[i] == vector[j]) {
+
+                        vector[j] = (int) (Math.random() * (max - min + 1) + min);
 
                     }
 
@@ -49,25 +92,16 @@ public class Ejercicio23 {
 
             }
 
-            j = vector[i - 1];
-
-            for (int k = 0; k <= 19; k++) {
-
-                if (k <= (palabra.length() - 1)) {
-
-                    matriz[j][k] = palabra.substring(k,k + 1);
-
-                }
-
-            }
-
         }
 
-        max = 9;
+    }
+
+    public static void numeroAleatorio(String[][] matriz, int min, int max) {
+        String num = "";
 
         for (int i = 0; i <= 19; i++) {
 
-            for (j = 0; j <= 19; j++) {
+            for (int j = 0; j <= 19; j++) {
 
                 if (matriz[i][j] == null) {
 
