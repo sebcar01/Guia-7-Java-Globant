@@ -11,21 +11,14 @@ public class Ejercicio10 {
         int num2 = (int) (Math.random() * 10);
 
         int multiplicacion = num1 * num2;
+        System.out.println(multiplicacion);
 
         do {
 
             System.out.println("Ingresa el resultado");
             num = sc.nextInt();
 
-            if (num == multiplicacion) {
-
-                System.out.println("Felicidades! Adivinaste el número!");
-
-            } else {
-
-                System.out.println("Resultado incorrecto. Intenta de nuevo.");
-
-            }
+            System.out.println(num == multiplicacion ? "Felicidades! Adivinaste el número!" : "Resultado incorrecto. Intenta de nuevo.");
 
         } while (num != multiplicacion);
 
